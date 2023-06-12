@@ -1,9 +1,10 @@
-package lab15.firstspringproject.controller.model;
+package lab15.firstspringproject.model;
 
 import javax.validation.constraints.Max;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
-
+import lombok.Data;
+@Data
 public class Request {
     public String getUid() {
         return uid;

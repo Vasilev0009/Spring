@@ -1,6 +1,6 @@
-package lab15.firstspringproject.controller.model.service;
+package lab15.firstspringproject.service;
 
-import lab15.firstspringproject.controller.model.Response;
+import lab15.firstspringproject.model.Response;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;

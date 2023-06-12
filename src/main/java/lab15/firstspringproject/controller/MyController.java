@@ -1,9 +1,9 @@
 package lab15.firstspringproject.controller;
 
 
-import lab15.firstspringproject.controller.model.Request;
-import lab15.firstspringproject.controller.model.Response;
-import lab15.firstspringproject.controller.model.service.MyModifyService;
+import lab15.firstspringproject.model.Request;
+import lab15.firstspringproject.model.Response;
+import lab15.firstspringproject.service.MyModifyService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;

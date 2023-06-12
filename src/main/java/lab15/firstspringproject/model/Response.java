@@ -1,4 +1,4 @@
-package lab15.firstspringproject.controller.model;
+package lab15.firstspringproject.model;
 
 import lombok.Builder;
 import lombok.Data;
