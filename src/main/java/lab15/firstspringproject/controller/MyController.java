@@ -3,6 +3,7 @@ package lab15.firstspringproject.controller;
 
 import lab15.firstspringproject.model.Request;
 import lab15.firstspringproject.model.Response;
+import lab15.firstspringproject.service.ModifyRequestService;
 import lab15.firstspringproject.service.MyModifyService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,10 +19,13 @@ import org.springframework.web.bind.annotation.RestController;
 public class MyController {
 
     private final MyModifyService myModifyService;
+    private final ModifyRequestService modifyRequestService;
 
     @Autowired
-    public MyController(@Qualifier("ModifyErrorMessage")MyModifyService myModifyService){
+    public MyController(@Qualifier("ModifyErrorMessage")MyModifyService myModifyService,
+                        ModifyRequestService modifyRequestService){
         this.myModifyService = myModifyService;
+        this.modifyRequestService = modifyRequestService;
     }
     @PostMapping(value = "/feedback")
     public ResponseEntity<Response> feedback(@RequestBody Request request){
@@ -37,9 +41,11 @@ public class MyController {
                 .errorMessage("")
                 .build();
 
-        Response responseAfterModify = myModifyService.modify(response);
-        log.info("Входящий response :" + String.valueOf(response));
+        modifyRequestService.modifyRq(request);
 
-        return new ResponseEntity<>(response, HttpStatus.OK);
+        Response responseAfterModify = myModifyService.modify(response);
+        log.warn("Исходящий response :" + String.valueOf(response));
+
+        return new ResponseEntity<>(responseAfterModify, HttpStatus.OK);
     }
 }

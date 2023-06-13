@@ -2,7 +2,7 @@ package lab15.firstspringproject.service;
 
 import lab15.firstspringproject.model.Request;
 
-public interface ModifyRequestSerice {
+public interface ModifyRequestService {
 
     void modifyRq(Request request);
 }
